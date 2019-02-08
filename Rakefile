@@ -13,10 +13,15 @@ task :default do
   exit 1
 end
 
+task :build_static do
+  sh 'go build -mod=vendor ' + \
+     '-tags netgo -ldflags \'-w -extldflags "-static"\''
+end
+
 task :build do
   sh 'go build -mod=vendor'
 end
 
 task :check => [:build] do
-  sh './cloudera-amgr-alert cloudera-alert.json'
+  sh './cloudera-amgr-alert --debug cloudera-alert.json'
 end
