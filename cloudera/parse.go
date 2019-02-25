@@ -1,14 +1,14 @@
 /* 2019-02-07 (cc) <paul4hough@gmail.com>
    process cloudera alerts json file
 */
-package main
+package cloudera
 
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"os"
+	"time"
 
+	pmod "github.com/prometheus/common/model"
 	amgr "github.com/pahoughton/cloudera-amgr-alert/alertmanager"
 	"github.com/pahoughton/cloudera-amgr-alert/config"
 )
@@ -19,8 +19,8 @@ type AlertHeader struct {
 }
 
 type AlertTime struct {
-	IsoStr	string	`json:"iso8601"`
-	Epoch	uint	`json:"epochMs"`
+	Iso		time.Time	`json:"iso8601"`
+	Epoch	uint		`json:"epochMs"`
 }
 
 type Alert struct {
@@ -39,25 +39,17 @@ type AlertMsg struct {
 	Header	AlertHeader		`json:"header"`
 }
 
-func parseCloudera(fn string,cfg *config.Config,debug bool) error {
-
-	aFile, err := os.Open(fn)
-	if err != nil {
-		return err
-	}
-	defer aFile.Close()
-
-	var aData []AlertMsg
+func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
+	var cloudera []AlertMsg
 	//var aData []map[string]interface{}
 
-	b, _ := ioutil.ReadAll(aFile)
-	if err := json.Unmarshal(b, &aData); err != nil {
-		return fmt.Errorf("json.Unmarshal %s: %s - %v",fn,err.Error(),string(b))
+	if err := json.Unmarshal(dat, &cloudera); err != nil {
+		panic(err)
     }
 
-	var amaList []amgr.AmgrAlert
+	amaList := make([]amgr.Alert,0,len(cloudera))
 
-	for _, a := range aData {
+	for _, a := range cloudera {
 
 		attrs := a.Body.Alert.Attrs
 		prevHealth := attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)
@@ -73,12 +65,12 @@ func parseCloudera(fn string,cfg *config.Config,debug bool) error {
 			}
 			continue;
 		}
-		ama := amgr.AmgrAlert{
-			StartsAt:		a.Body.Alert.When.IsoStr,
+		ama := amgr.Alert{
+			StartsAt:		a.Body.Alert.When.Iso,
 			GeneratorURL:	a.Body.Alert.Source,
 		}
-		ama.Labels = make(map[string]string)
-		ama.Annots = make(map[string]string)
+		ama.Labels = make(pmod.LabelSet)
+		ama.Annotations = make(pmod.LabelSet)
 
 		if len(cfg.Global.Labels) > 0 {
 			for lk, lv := range cfg.Global.Labels {
@@ -87,23 +79,20 @@ func parseCloudera(fn string,cfg *config.Config,debug bool) error {
 		}
 		if len(cfg.Global.Annots) > 0 {
 			for ak, av := range cfg.Global.Annots {
-				ama.Annots[ak] = av
+				ama.Annotations[ak] = av
 			}
 		}
-		ama.Labels["alertname"] = "cloudera-script"
-		ama.Labels["uuid"]		= attrs["__uuid"][0].(string)
-		ama.Annots["title"]		= title
-		if instance, ok := attrs["HOSTS"]; ok {
-			ama.Labels["instance"]	= instance[0].(string)
+		if _, ok := ama.Labels["alertname"]; ! ok {
+			ama.Labels["alertname"] = "cloudera-script"
 		}
-		ama.Annots["description"]	= a.Body.Alert.Content
+		ama.Labels["uuid"]		= pmod.LabelValue(attrs["__uuid"][0].(string))
+		ama.Annotations["title"] = pmod.LabelValue(title)
+		if instance, ok := attrs["HOSTS"]; ok {
+			ama.Labels["instance"]	= pmod.LabelValue(instance[0].(string))
+		}
+		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
 
 		amaList = append(amaList, ama)
 	}
-	if len(amaList) > 0 {
-		if err := amgr.SendAlerts(amaList,cfg,debug); err != nil {
-			return err
-		}
-	}
-	return nil
+	return amaList
 }

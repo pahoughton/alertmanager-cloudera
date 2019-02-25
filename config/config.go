@@ -6,6 +6,7 @@ package config
 import (
 	"io/ioutil"
 
+	pmod "github.com/prometheus/common/model"
 	"gopkg.in/yaml.v2"
 )
 
@@ -19,8 +20,8 @@ type Amgr struct {
 }
 
 type GlobalConfig struct {
-	Labels		map[string]string	`yaml:"labels,omitempty"`
-	Annots		map[string]string	`yaml:"annotations,omitempty"`
+	Labels		pmod.LabelSet	`yaml:"labels,omitempty"`
+	Annots		pmod.LabelSet	`yaml:"annotations,omitempty"`
 }
 
 type Config struct {
@@ -28,7 +29,7 @@ type Config struct {
 	Amgrs		[]Amgr				`yaml:"alertmanagers"`
 }
 
-func LoadFile(fn string) (*Config, error) {
+func Load(fn string) (*Config, error) {
 
 	dat, err := ioutil.ReadFile(fn)
 	if err != nil {

@@ -5,6 +5,7 @@ global:
   labels:
     alertname: cloudera-script
     no_resolve: true
+    env: sandbox
 
 alertmanagers:
   - scheme: https

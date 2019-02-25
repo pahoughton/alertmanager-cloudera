@@ -1,0 +1,24 @@
+# 2019-01-30 (cc) <paul4hough@gmail.com>
+#
+---
+variables:
+  GOCACHE: /tmp/go-cache
+
+build:
+  image: $CI_REGISTRY/registry/hub.docker.com/golang:1.11.5-stretch
+  stage: build
+  artifacts:
+    paths:
+      - cloudera-alertmanager
+  script:
+    - go build -mod=vendor
+
+yamllint:
+  image: $CI_REGISTRY/registry/yamllint
+  script:
+    - yamllint .gitlab-ci.yml .travis.yml config
+
+go-test:
+  image: $CI_REGISTRY/registry/hub.docker.com/golang:1.11.5-stretch
+  script:
+    - go test ./...

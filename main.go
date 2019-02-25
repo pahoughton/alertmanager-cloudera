@@ -7,11 +7,21 @@ import (
 	"fmt"
 	"os"
 	"path"
-
+	"runtime"
 	"github.com/pahoughton/cloudera-amgr-alert/config"
+	"github.com/pahoughton/cloudera-amgr-alert/cloudera"
 
 	"gopkg.in/alecthomas/kingpin.v2"
 
+)
+
+var (
+	Version	  string
+	Revision  string
+	Branch    string
+	BuildUser string
+	BuildDate string
+	GoVersion = runtime.Version()
 )
 
 type CommandArgs struct {
@@ -21,30 +31,40 @@ type CommandArgs struct {
 }
 
 func main() {
+	version := fmt.Sprintf(`%s: version %s branch: %s, rev: %s
+  build: %s %s
+`,
+		path.Base(os.Args[0]),
+		Version,
+		Branch,
+		Revision,
+		BuildDate,
+		GoVersion)
 
 	app := kingpin.New(path.Base(os.Args[0]),
-		"cloudera alertmanager alert script").
-			Version("1.0.1")
+		"connect cloudera alerts to alertmanager").
+			Version(version)
 
 	args := CommandArgs{
 		ConfigFn:	app.Flag("config-fn","config filename").
-			Default("cloudera-amgr-alert.yml").ExistingFile(),
-		Debug:		app.Flag("debug","debug output to stdout").
-			Default("true").Bool(),
-		AlertFn:	app.Arg("json", "json alert filename").
-			Required().ExistingFile(),
+			Default("cloudera-amgr-alert.yml").String(),
+		Debug:		app.Flag("debug","debug output to stdout").Bool(),
+		AlertFn:	app.Arg("json", "json alert filename").String(),
 	}
-
+	debug := false
+	if args.Debug != nil && *args.Debug {
+		debug = true
+	}
 	kingpin.MustParse(app.Parse(os.Args[1:]))
-	fmt.Println("loading ",*args.ConfigFn)
+	if debug { fmt.Println("loading ",*args.ConfigFn) }
 
-	cfg, err := config.LoadFile(*args.ConfigFn)
+	cfg, err := config.Load(*args.ConfigFn)
 	if err != nil {
 		panic(err)
 	}
 
-	if err := parseCloudera(*args.AlertFn,cfg,*args.Debug); err != nil {
+	if err := cloudera.Send(*args.AlertFn,cfg,debug); err != nil {
 		panic(err)
 	}
-	fmt.Println(*args.AlertFn)
+	if debug { fmt.Println(*args.AlertFn) }
 }
