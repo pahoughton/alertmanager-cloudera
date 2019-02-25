@@ -1,32 +1,34 @@
-## cloudera-amgr-alert
+## alertmanager-cloudera
 
-[![Test Build Status](https://travis-ci.org/pahoughton/cloudera-amgr-alert.png)](https://travis-ci.org/pahoughton/cloudera-amgr-alert)
+[![Test Build Status](https://travis-ci.org/pahoughton/alertmanager-cloudera.png)](https://travis-ci.org/pahoughton/alertmanager-cloudera)
 
-generate an
 [alertmanager](https://prometheus.io/docs/alerting/alertmanager/)
 alerts from
 [cloudera](https://www.cloudera.com/documentation/enterprise/5-14-x/topics/cm_ag_alert_script.html#concept_sfx_lkw_yt)
-alert json.  Example alert json available in
-[cloudera-alert.json](../master/cloudera-alert.json)
-
-## install
-
-install script and binary in alert publisher user's path.
-
-modify script configuration as needed.
+alert script json input.
 
 ## usage
 
 configure as a cloudera alert script as described by the cloudera 5.14
 [documentation](https://www.cloudera.com/documentation/enterprise/5-14-x/topics/cm_ag_alert_script.html#concept_sfx_lkw_yt)
 
+### config
+
+config/tesetdata/good-ful.yml
+[github] (blob/master/config/testdata/good-full.yml)
+[gitlab] (../master/config/testdata/good-full.yml)
+
 ## build
 
 go build -mod=vendor
 
+## validate
+
+go test ./...
+
 ## contribute
 
-https://github.com/pahoughton/cloudera-amgr-alert
+https://github.com/pahoughton/alertmanager-cloudera
 
 ## licenses
 
