@@ -8,8 +8,8 @@ import (
 	"os"
 	"path"
 	"runtime"
-	"github.com/pahoughton/cloudera-amgr-alert/config"
-	"github.com/pahoughton/cloudera-amgr-alert/cloudera"
+	"github.com/pahoughton/alertmanager-cloudera/config"
+	"github.com/pahoughton/alertmanager-cloudera/cloudera"
 
 	"gopkg.in/alecthomas/kingpin.v2"
 
@@ -47,7 +47,7 @@ func main() {
 
 	args := CommandArgs{
 		ConfigFn:	app.Flag("config-fn","config filename").
-			Default("cloudera-amgr-alert.yml").String(),
+			Default("alertmanager-cloudera.yml").String(),
 		Debug:		app.Flag("debug","debug output to stdout").Bool(),
 		AlertFn:	app.Arg("json", "json alert filename").String(),
 	}

@@ -6,8 +6,8 @@ package cloudera
 import (
 	"os"
 	"io/ioutil"
-	"github.com/pahoughton/cloudera-amgr-alert/config"
-	amgr "github.com/pahoughton/cloudera-amgr-alert/alertmanager"
+	"github.com/pahoughton/alertmanager-cloudera/config"
+	amgr "github.com/pahoughton/alertmanager-cloudera/alertmanager"
 )
 
 func Send(fn string,cfg *config.Config,debug bool) error {

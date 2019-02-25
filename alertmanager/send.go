@@ -10,7 +10,7 @@ import (
 	"net/http"
 
 	pmod "github.com/prometheus/common/model"
-	"github.com/pahoughton/cloudera-amgr-alert/config"
+	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 
 const (

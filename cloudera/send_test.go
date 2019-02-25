@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 	"github.com/stretchr/testify/assert"
-	amgr "github.com/pahoughton/cloudera-amgr-alert/alertmanager"
-	"github.com/pahoughton/cloudera-amgr-alert/config"
+	amgr "github.com/pahoughton/alertmanager-cloudera/alertmanager"
+	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 func TestSend(t *testing.T) {
 	am := &amgr.MockServer{}

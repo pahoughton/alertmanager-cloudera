@@ -1,4 +1,4 @@
-module github.com/pahoughton/cloudera-amgr-alert
+module github.com/pahoughton/alertmanager-cloudera
 
 require (
 	github.com/prometheus/common v0.2.0

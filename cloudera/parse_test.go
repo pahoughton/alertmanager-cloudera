@@ -10,7 +10,7 @@ import (
 
 	pmod "github.com/prometheus/common/model"
 	"github.com/stretchr/testify/assert"
-	"github.com/pahoughton/cloudera-amgr-alert/config"
+	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 func TestParse(t *testing.T) {
 	cfg := &config.Config{}
