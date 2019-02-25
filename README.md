@@ -14,18 +14,13 @@ configure as a cloudera alert script as described by the cloudera 5.14
 
 ### config
 
-config/tesetdata/good-ful.yml
-[github](blob/master/config/testdata/good-full.yml)
-[gitlab](../master/config/testdata/good-full.yml)
-
-## build
-
-go build -mod=vendor
+[good-ful.yml](../master/config/testdata/good-full.yml)
 
 ## validate
-
+```
+rake test
 go test ./...
-
+```
 ## contribute
 
 https://github.com/pahoughton/alertmanager-cloudera
