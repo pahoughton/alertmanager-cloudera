@@ -8,7 +8,7 @@ at_exit {
   puts "run time: #{runtime}"
 }
 
-app = File.basename(Dir.pwd)
+app = 'alertmanager-cloudera'
 version = File.open('VERSION', &:readline).chomp
 
 task :default do
