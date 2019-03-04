@@ -9,7 +9,7 @@ build:
   stage: build
   artifacts:
     paths:
-      - cloudera-alertmanager
+      - alertmanager-cloudera
   script:
     - go build -mod=vendor
 
@@ -21,4 +21,4 @@ yamllint:
 go-test:
   image: $CI_REGISTRY/registry/hub.docker.com/golang:1.11.5-stretch
   script:
-    - go test ./...
+    - go test -mod=vendor ./...
