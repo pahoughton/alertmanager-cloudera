@@ -14,7 +14,7 @@ build:
     - go build -mod=vendor
 
 yamllint:
-  image: $CI_REGISTRY/registry/yamllint
+  image: $CI_REGISTRY/cca/cca/yamllint
   script:
     - yamllint .gitlab-ci.yml .travis.yml config
 
