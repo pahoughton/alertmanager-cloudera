@@ -1,0 +1,38 @@
+[ {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "One or more errors occurred running the HBase region health canary." ],
+        "EXCEPTION_TYPES" : [ "org.apache.hadoop.hbase.MasterNotRunningException", "org.apache.hadoop.hbase.client.RetriesExhaustedException", "java.io.IOException" ],
+        "DURATION_MS" : [ "41" ],
+        "HBASE_CANARY_TOTAL_REGIONS" : [ "0" ],
+        "HBASE_CANARY_UNHEALTHY_REGION_COUNT" : [ "0" ],
+        "HBASE_CANARY_ERRORS" : [ "org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=1, exceptions:\nFri Feb 22 04:41:29 UTC 2019, RpcRetryingCaller{globalStartTime=1550810489023, pause=100, retries=1}, org.apache.hadoop.hbase.MasterNotRunningException: java.io.IOException: Can't get master address from ZooKeeper; znode data == null\n" ],
+        "ALERT" : [ "true" ],
+        "__persist_timestamp" : [ "1550810489072" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "SERVICE_DISPLAY_NAME" : [ "HBase" ],
+        "EVENT_VERSION" : [ "1" ],
+        "HBASE_CANARY_TABLE_RESULTS" : [ "[]" ],
+        "__uuid" : [ "fea1b4f0-f8b5-433f-a486-9ff8f91f3c24" ],
+        "CATEGORY" : [ "HBASE" ],
+        "EVENTCODE" : [ "EV_HBASE_REGION_HEALTH_CANARY_RESULTS" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE" : [ "hbase" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "SEVERITY" : [ "IMPORTANT" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/fea1b4f0-f8b5-433f-a486-9ff8f91f3c24",
+      "content" : "Error running canary: org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=1, exceptions:\nFri Feb 22 04:41:29 UTC 2019, RpcRetryingCaller{globalStartTime=1550810489023, pause=100, retries=1}, org.apache.hadoop.hbase.MasterNotRunningException: java.io.IOException: Can't get master address from ZooKeeper; znode data == null\n\nHBase region health: 0 unhealthy regions\n",
+      "timestamp" : {
+        "epochMs" : 1550810489024,
+        "iso8601" : "2019-02-22T04:41:29Z"
+      }
+    }
+  }
+} ]

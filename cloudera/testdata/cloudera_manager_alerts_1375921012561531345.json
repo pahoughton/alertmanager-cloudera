@@ -1,0 +1,84 @@
+[ {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service hdfs has become bad." ],
+        "NAMESERVICE" : [ "nameservice1" ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.",
+          "testName" : "alarm:NameNode JVM Heap Utilization",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "alarm:NameNode JVM Heap Utilization" ],
+        "__persist_timestamp" : [ "1550806871233" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "90c71e6c-e3e7-4894-8fd0-220cf0d18228" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "hdfs" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become good: NameNode JVM Heap Utilization trigger is not firing.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HDFS" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HDFS" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/90c71e6c-e3e7-4894-8fd0-220cf0d18228",
+      "content" : "The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.",
+      "timestamp" : {
+        "epochMs" : 1550806871177,
+        "iso8601" : "2019-02-22T03:41:11Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "One or more errors occurred running the HBase region health canary." ],
+        "EXCEPTION_TYPES" : [ "org.apache.hadoop.hbase.MasterNotRunningException", "org.apache.hadoop.hbase.client.RetriesExhaustedException", "java.io.IOException" ],
+        "DURATION_MS" : [ "17" ],
+        "HBASE_CANARY_TOTAL_REGIONS" : [ "0" ],
+        "HBASE_CANARY_UNHEALTHY_REGION_COUNT" : [ "0" ],
+        "HBASE_CANARY_ERRORS" : [ "org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=1, exceptions:\nFri Feb 22 03:41:28 UTC 2019, RpcRetryingCaller{globalStartTime=1550806888958, pause=100, retries=1}, org.apache.hadoop.hbase.MasterNotRunningException: java.io.IOException: Can't get master address from ZooKeeper; znode data == null\n" ],
+        "ALERT" : [ "true" ],
+        "__persist_timestamp" : [ "1550806888983" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "SERVICE_DISPLAY_NAME" : [ "HBase" ],
+        "EVENT_VERSION" : [ "1" ],
+        "HBASE_CANARY_TABLE_RESULTS" : [ ],
+        "__uuid" : [ "565241e2-bef8-4b37-8e44-a25e69585f61" ],
+        "CATEGORY" : [ "HBASE" ],
+        "EVENTCODE" : [ "EV_HBASE_REGION_HEALTH_CANARY_RESULTS" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE" : [ "hbase" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "SEVERITY" : [ "IMPORTANT" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/565241e2-bef8-4b37-8e44-a25e69585f61",
+      "content" : ["Error running canary: org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=1, exceptions:Fri Feb 22 03:41:28 UTC 2019, RpcRetryingCaller{globalStartTime=1550806888958, pause=100, retries=1}, org.apache.hadoop.hbase.MasterNotRunningException: java.io.IOException: Can't get master address from ZooKeeper; znode data == nullHBase region health: 0 unhealthy regions"],
+      "timestamp" : {
+        "epochMs" : 1550806888958,
+        "iso8601" : "2019-02-22T03:41:28Z"
+      }
+    }
+  }
+} ]
