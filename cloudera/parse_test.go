@@ -7,6 +7,8 @@ import (
 	"io/ioutil"
 	"os"
 	"testing"
+	"fmt"
+	"path/filepath"
 
 	pmod "github.com/prometheus/common/model"
 	"github.com/stretchr/testify/assert"
@@ -15,6 +17,23 @@ import (
 func TestParse(t *testing.T) {
 	cfg := &config.Config{}
 
+	myDirGlob, err := filepath.Glob("testdata/*.json")
+	assert.Nil(t,err)
+	assert.NotNil(t, 9, len(myDirGlob))
+	for _, fn := range myDirGlob {
+		openJSON, err := os.Open(fn)
+		assert.Nil(t,err)
+		assert.NotNil(t,openJSON)
+		readJSON, err := ioutil.ReadAll(openJSON)
+		assert.Nil(t,err)
+		assert.NotNil(t,readJSON)
+		fmt.Printf("%s was sent to the parser!\n", fn)
+
+		got := parse(readJSON,cfg,false)
+		assert.NotNil(t,got,fn)
+
+	}
+/*
 	f, err := os.Open("testdata/cloudera-alert.json")
 	assert.Nil(t,err)
 	assert.NotNil(t,f)
@@ -31,4 +50,5 @@ func TestParse(t *testing.T) {
 	assert.Equal(t,2,len(got))
 	assert.Equal(t,got[0].Labels["uuid"],expuuid[0])
 	assert.Equal(t,got[1].Labels["uuid"],expuuid[1])
+*/
 }
