@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 func TestLoad(t *testing.T) {
-	assert.True(t,true)
+	//assert.True(t,true)
 	got, err := Load("testdata/good-full.yml")
 	assert.Nil(t,err)
 	assert.NotNil(t,got)

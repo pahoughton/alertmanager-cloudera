@@ -12,7 +12,7 @@ import (
 	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 func TestSend(t *testing.T) {
-	assert.True(t,true)
+	//assert.True(t,true)
 	am := &MockServer{}
 	ms := httptest.NewServer(am)
 	defer ms.Close()

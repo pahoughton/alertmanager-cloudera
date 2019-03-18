@@ -113,6 +113,7 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
 		
 		amaList = append(amaList, ama)
+		
 	}
 	return amaList
 }
