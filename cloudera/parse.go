@@ -56,26 +56,26 @@ type AlertTime struct {
 }
 
 func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
-
+	//defines cloudera with above struct
 	var cloudera []AlertMsg
-	
+	//unmarshals passed in []byte to above defined cloudera variable
 	if err := json.Unmarshal(dat, &cloudera); err != nil {
 		panic(err)
 	}
-
+	//defines the alert
 	amaList := make([]amgr.Alert,0,len(cloudera))
-
+	//for the length of the cloudera array
 	for _, a := range cloudera {
+		//this section takes attributes in the JSON and makes them strings
 		prevHealthString := strings.Join(a.Body.Alert.Attrs.PrevHealth,"")
 		clusterNameString := strings.Join(a.Body.Alert.Attrs.ClusterName,"")
 		alertSummaryString := strings.Join(a.Body.Alert.Attrs.AlertSumm,"") 
 		isSuppressed := strings.Join(a.Body.Alert.Attrs.AlertSuppressed,"")
 		uuid := strings.Join(a.Body.Alert.Attrs.UUID,"")
+		//defines the title by combining two strings
 		title := fmt.Sprintf("%s %s",clusterNameString,alertSummaryString)
+		//checks if the alert is NOT green or NOT suppressed.
 		if prevHealthString != "GREEN" || isSuppressed != "false" {
-			//fmt.Printf("Title: %s\n", title)
-			//fmt.Printf("UUID: %v\n", a.Body.Alert.Attrs.UUID)
-			//fmt.Printf("Previous Health: %v\n\n", prevHealthString)
 			if debug {
 				fmt.Printf("Skip: %v : %v\n", clusterNameString, alertSummaryString)
 				}
@@ -103,14 +103,15 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		}
 		ama.Labels["uuid"]		= pmod.LabelValue(uuid)
 		ama.Annotations["title"] = pmod.LabelValue(title)
-
+		//this section parses out the Hostname from the URL found in the Source
+		//this is because the HOST field is found so infrequently in the JSON
 		s, err := url.Parse(a.Body.Alert.Source)
 		if err != nil {
 			panic(err)
 		}
-		hostName := s.Host
+		//hostName := s.Host
 		//fmt.Printf("Hostname: %s\n", hostName)
-		ama.Labels["instance"]	= pmod.LabelValue(hostName)
+		ama.Labels["instance"]	= pmod.LabelValue(s.Host)
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
 		
 		amaList = append(amaList, ama)
