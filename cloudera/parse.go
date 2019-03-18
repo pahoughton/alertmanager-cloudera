@@ -7,39 +7,118 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
+	"strings"
+	"net/url"
 
 	pmod "github.com/prometheus/common/model"
 	amgr "github.com/pahoughton/alertmanager-cloudera/alertmanager"
 	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 
+//Top Level (level 0)
+type AlertMsg struct {
+	AlertMain []interface{}
+	Body	AlertBody		`json:"body"`
+	Header	AlertHeader		`json:"header"`
+}
+//Header struct (level 1)
 type AlertHeader struct {
 	htype	string		`json:"type"`
 	version	int			`json:"version"`
 }
+//Body struct (level 1)
+type AlertBody struct {
+	Alert	Alert	`json:"alert"`
+}
+//Alert sctuct (level 2, under Body)
+type Alert struct {
+	Attrs	Attributes	`json:"attributes"`
+	Source	string		`json:"source"`
+	Content	string		`json:"content"`
+	When	AlertTime	`json:"timestamp"`
+}
 
+//may need an attributes struct, tbd
+type Attributes struct {
+	AlertSuppressed []string `json:"ALERT_SUPPRESSED"`
+	HealthTestName []string `json:"HEALTH_TEST_NAME"`
+	PrevHealth []string `json:"PREVIOUS_HEALTH_SUMMARY"`
+	ClusterName []string `json:"CLUSTER_DISPLAY_NAME"`
+	AlertSumm []string `json:"ALERT_SUMMARY"`
+	UUID []string `json:"__uuid"`
+}
+
+
+//timestamp struct (level 3, under alert)
 type AlertTime struct {
 	Iso		time.Time	`json:"iso8601"`
 	Epoch	uint		`json:"epochMs"`
 }
 
-type Alert struct {
-	Content	string						`json:"content"`
-	When	AlertTime					`json:"timestamp"`
-	Source	string						`json:"source"`
-	Attrs	map[string][]interface{}	`json:"attributes"`
-}
-
-type AlertBody struct {
-	Alert	Alert	`json:"alert"`
-}
-
-type AlertMsg struct {
-	Body	AlertBody		`json:"body"`
-	Header	AlertHeader		`json:"header"`
-}
-
 func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
+
+	var cloudera []AlertMsg
+	
+	if err := json.Unmarshal(dat, &cloudera); err != nil {
+		panic(err)
+	}
+
+	amaList := make([]amgr.Alert,0,len(cloudera))
+
+	for _, a := range cloudera {
+		prevHealthString := strings.Join(a.Body.Alert.Attrs.PrevHealth,"")
+		clusterNameString := strings.Join(a.Body.Alert.Attrs.ClusterName,"")
+		alertSummaryString := strings.Join(a.Body.Alert.Attrs.AlertSumm,"") 
+		isSuppressed := strings.Join(a.Body.Alert.Attrs.AlertSuppressed,"")
+		uuid := strings.Join(a.Body.Alert.Attrs.UUID,"")
+		title := fmt.Sprintf("%s %s",clusterNameString,alertSummaryString)
+		if prevHealthString != "GREEN" || isSuppressed != "false" {
+			//fmt.Printf("Title: %s\n", title)
+			//fmt.Printf("UUID: %v\n", a.Body.Alert.Attrs.UUID)
+			//fmt.Printf("Previous Health: %v\n\n", prevHealthString)
+			if debug {
+				fmt.Printf("Skip: %v : %v\n", clusterNameString, alertSummaryString)
+				}
+			continue;
+		}
+		ama := amgr.Alert{
+			StartsAt:		a.Body.Alert.When.Iso,
+			GeneratorURL:	a.Body.Alert.Source,
+		}
+		ama.Labels = make(pmod.LabelSet)
+		ama.Annotations = make(pmod.LabelSet)
+
+		if len(cfg.Global.Labels) > 0 {
+			for lk, lv := range cfg.Global.Labels {
+				ama.Labels[lk] = lv
+			}
+		}
+		if len(cfg.Global.Annots) > 0 {
+			for ak, av := range cfg.Global.Annots {
+				ama.Annotations[ak] = av
+			}
+		}
+		if _, ok := ama.Labels["alertname"]; ! ok {
+			ama.Labels["alertname"] = "cloudera-script"
+		}
+		ama.Labels["uuid"]		= pmod.LabelValue(uuid)
+		ama.Annotations["title"] = pmod.LabelValue(title)
+
+		s, err := url.Parse(a.Body.Alert.Source)
+		if err != nil {
+			panic(err)
+		}
+		hostName := s.Host
+		//fmt.Printf("Hostname: %s\n", hostName)
+		ama.Labels["instance"]	= pmod.LabelValue(hostName)
+		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
+		
+		amaList = append(amaList, ama)
+	}
+	return amaList
+}
+
+/*
 	var cloudera []AlertMsg
 	//var aData []map[string]interface{}
 
@@ -94,5 +173,5 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 
 		amaList = append(amaList, ama)
 	}
-	return amaList
-}
+*/
+

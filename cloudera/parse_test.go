@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	pmod "github.com/prometheus/common/model"
+	//pmod "github.com/prometheus/common/model"
 	"github.com/stretchr/testify/assert"
 	"github.com/pahoughton/alertmanager-cloudera/config"
 )
