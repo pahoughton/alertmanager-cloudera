@@ -15,6 +15,7 @@ import (
 	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 func TestParse(t *testing.T) {
+	assert.True(t,true)
 	cfg := &config.Config{}
 
 	myDirGlob, err := filepath.Glob("testdata/*.json")

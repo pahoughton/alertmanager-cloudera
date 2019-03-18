@@ -109,8 +109,6 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		if err != nil {
 			panic(err)
 		}
-		//hostName := s.Host
-		//fmt.Printf("Hostname: %s\n", hostName)
 		ama.Labels["instance"]	= pmod.LabelValue(s.Host)
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
 		
