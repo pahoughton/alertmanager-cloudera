@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-	"strings"
+	//"strings"
 	"net/url"
 
 	pmod "github.com/prometheus/common/model"
@@ -32,13 +32,13 @@ type AlertBody struct {
 }
 //Alert sctuct (level 2, under Body)
 type Alert struct {
-	Attrs	Attributes	`json:"attributes"`
+	Attrs	map[string][]interface{}	`json:"attributes"`
 	Source	string		`json:"source"`
 	Content	string		`json:"content"`
 	When	AlertTime	`json:"timestamp"`
 }
 
-//may need an attributes struct, tbd
+/*
 type Attributes struct {
 	AlertSuppressed []string `json:"ALERT_SUPPRESSED"`
 	HealthTestName []string `json:"HEALTH_TEST_NAME"`
@@ -47,7 +47,7 @@ type Attributes struct {
 	AlertSumm []string `json:"ALERT_SUMMARY"`
 	UUID []string `json:"__uuid"`
 }
-
+*/
 
 //timestamp struct (level 3, under alert)
 type AlertTime struct {
@@ -66,6 +66,31 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 	amaList := make([]amgr.Alert,0,len(cloudera))
 	//for the length of the cloudera array
 	for _, a := range cloudera {
+
+		attrs := a.Body.Alert.Attrs
+		prevHealth := "GREEN"
+		if len(attrs["PREVIOUS_HEALTH_SUMMARY"]) > 0 {
+		//if len(a.Body.Alert.Attrs.PrevHealth) > 0 {
+			prevHealth = attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)	
+			//prevHealth = a.Body.Alert.Attrs.PrevHealth.(string)
+		}
+		//prevHealth := attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)
+		suppressed := attrs["ALERT_SUPPRESSED"][0].(string)
+		//suppressed := a.Body.Alert.Attrs.AlertSuppressed.(string)
+
+		title := fmt.Sprintf("%s %s",
+		attrs["CLUSTER_DISPLAY_NAME"][0].(string),
+		//a.Body.Alert.Attrs.ClusterName.(string),
+		attrs["ALERT_SUMMARY"][0].(string))
+		//a.Body.Alert.Attrs.AlertSumm.(string))
+
+	if prevHealth != "GREEN" || suppressed != "false" {
+		if debug {
+			fmt.Printf("Skip: %s\n",title)
+		}
+		continue;
+	}
+/*
 		//this section takes attributes in the JSON and makes them strings
 		prevHealthString := strings.Join(a.Body.Alert.Attrs.PrevHealth,"")
 		clusterNameString := strings.Join(a.Body.Alert.Attrs.ClusterName,"")
@@ -81,6 +106,7 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 				}
 			continue;
 		}
+*/
 		ama := amgr.Alert{
 			StartsAt:		a.Body.Alert.When.Iso,
 			GeneratorURL:	a.Body.Alert.Source,
@@ -101,7 +127,7 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		if _, ok := ama.Labels["alertname"]; ! ok {
 			ama.Labels["alertname"] = "cloudera-script"
 		}
-		ama.Labels["uuid"]		= pmod.LabelValue(uuid)
+		ama.Labels["uuid"]		= pmod.LabelValue(attrs["__uuid"][0].(string))
 		ama.Annotations["title"] = pmod.LabelValue(title)
 		//this section parses out the Hostname from the URL found in the Source
 		//this is because the HOST field is found so infrequently in the JSON
@@ -131,6 +157,10 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 	for _, a := range cloudera {
 
 		attrs := a.Body.Alert.Attrs
+		prevHealth := "GREEN"
+		if len(attrs["PREVIOUS_HEALTH_SUMMARY"]) > 0 {
+		  prevHealth = attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)	
+		}
 		prevHealth := attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)
 		suppressed := attrs["ALERT_SUPPRESSED"][0].(string)
 
