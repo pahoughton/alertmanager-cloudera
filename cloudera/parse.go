@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-
+	"net/url"
 	pmod "github.com/prometheus/common/model"
 	amgr "github.com/pahoughton/alertmanager-cloudera/alertmanager"
 	"github.com/pahoughton/alertmanager-cloudera/config"
@@ -95,7 +95,16 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		}
 		ama.Labels["uuid"]		= pmod.LabelValue(attrs["__uuid"][0].(string))
 		ama.Annotations["title"] = pmod.LabelValue(title)
-		ama.Labels["instance"]	= pmod.LabelValue(a.Body.Alert.Source)
+		if instance, ok := attrs["HOSTS"]; ok {
+			ama.Labels["instance"] = pmod.LabelValue(instance[0].(string))
+			} else {
+			s, err := url.Parse(a.Body.Alert.Source)
+			if err != nil {
+			panic(err)
+			}
+			ama.Labels["instance"] = pmod.LabelValue(s.Host)
+			}
+		
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
 		
 		amaList = append(amaList, ama)
