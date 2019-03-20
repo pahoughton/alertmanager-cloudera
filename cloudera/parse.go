@@ -22,8 +22,8 @@ type AlertMsg struct {
 }
 //Header struct (level 1)
 type AlertHeader struct {
-	htype	string		`json:"type"`
-	version	int			`json:"version"`
+	Htype	string	`json:"type"`
+	Version	int		`json:"version"`
 }
 //Body struct (level 1)
 type AlertBody struct {
@@ -64,14 +64,14 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		suppressed := attrs["ALERT_SUPPRESSED"][0].(string)
 
 		title := fmt.Sprintf("%s %s",
-		attrs["CLUSTER_DISPLAY_NAME"][0].(string),
-		attrs["ALERT_SUMMARY"][0].(string))
+			attrs["CLUSTER_DISPLAY_NAME"][0].(string),
+			attrs["ALERT_SUMMARY"][0].(string))
 
-	if prevHealth != "GREEN" || suppressed != "false" {
-		if debug {
-			fmt.Printf("Skip: %s\n",title)
-		}
-		continue;
+		if prevHealth != "GREEN" || suppressed != "false" {
+			if debug {
+				fmt.Printf("Skip: %s\n",title)
+			}
+			continue;
 	}
 
 		ama := amgr.Alert{
