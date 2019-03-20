@@ -7,7 +7,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-	"net/url"
 
 	pmod "github.com/prometheus/common/model"
 	amgr "github.com/pahoughton/alertmanager-cloudera/alertmanager"
@@ -96,13 +95,7 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		}
 		ama.Labels["uuid"]		= pmod.LabelValue(attrs["__uuid"][0].(string))
 		ama.Annotations["title"] = pmod.LabelValue(title)
-		//this section parses out the Hostname from the URL found in the Source
-		//this is because the HOST field is found so infrequently in the JSON
-		s, err := url.Parse(a.Body.Alert.Source)
-		if err != nil {
-			panic(err)
-		}
-		ama.Labels["instance"]	= pmod.LabelValue(s.Host)
+		ama.Labels["instance"]	= pmod.LabelValue(a.Body.Alert.Source)
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
 		
 		amaList = append(amaList, ama)
