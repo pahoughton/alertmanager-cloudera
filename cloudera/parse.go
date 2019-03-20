@@ -57,7 +57,7 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		attrs := a.Body.Alert.Attrs
 		prevHealth := "GREEN"
 		if len(attrs["PREVIOUS_HEALTH_SUMMARY"]) > 0 {
-			prevHealth = attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)	
+			prevHealth = attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)
 		}
 
 		suppressed := attrs["ALERT_SUPPRESSED"][0].(string)
@@ -71,7 +71,7 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 				fmt.Printf("Skip: %s\n",title)
 			}
 			continue;
-	}
+		}
 
 		ama := amgr.Alert{
 			StartsAt:		a.Body.Alert.When.Iso,
@@ -97,18 +97,18 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		ama.Annotations["title"] = pmod.LabelValue(title)
 		if instance, ok := attrs["HOSTS"]; ok {
 			ama.Labels["instance"] = pmod.LabelValue(instance[0].(string))
-			} else {
+		} else {
 			s, err := url.Parse(a.Body.Alert.Source)
 			if err != nil {
-			panic(err)
+				panic(err)
 			}
 			ama.Labels["instance"] = pmod.LabelValue(s.Host)
-			}
-		
+		}
+
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
-		
+
 		amaList = append(amaList, ama)
-		
+
 	}
 	return amaList
 }
