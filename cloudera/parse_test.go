@@ -7,10 +7,9 @@ import (
 	"io/ioutil"
 	"os"
 	"testing"
-	"fmt"
 	"path/filepath"
 
-	//pmod "github.com/prometheus/common/model"
+	pmod "github.com/prometheus/common/model"
 	"github.com/stretchr/testify/assert"
 	"github.com/pahoughton/alertmanager-cloudera/config"
 )
@@ -28,13 +27,10 @@ func TestParse(t *testing.T) {
 		readJSON, err := ioutil.ReadAll(openJSON)
 		assert.Nil(t,err)
 		assert.NotNil(t,readJSON)
-		fmt.Printf("%s was sent to the parser!\n", fn)
-
 		got := parse(readJSON,cfg,false)
 		assert.NotNil(t,got,fn)
-
 	}
-/*
+
 	f, err := os.Open("testdata/cloudera-alert.json")
 	assert.Nil(t,err)
 	assert.NotNil(t,f)
@@ -51,5 +47,4 @@ func TestParse(t *testing.T) {
 	assert.Equal(t,2,len(got))
 	assert.Equal(t,got[0].Labels["uuid"],expuuid[0])
 	assert.Equal(t,got[1].Labels["uuid"],expuuid[1])
-*/
 }
