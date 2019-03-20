@@ -7,52 +7,59 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-
+	"net/url"
 	pmod "github.com/prometheus/common/model"
 	amgr "github.com/pahoughton/alertmanager-cloudera/alertmanager"
 	"github.com/pahoughton/alertmanager-cloudera/config"
 )
 
+//Top Level (level 0)
+type AlertMsg struct {
+	AlertMain []interface{}
+	Body	AlertBody		`json:"body"`
+	Header	AlertHeader		`json:"header"`
+}
+//Header struct (level 1)
 type AlertHeader struct {
-	htype	string		`json:"type"`
-	version	int			`json:"version"`
+	Htype	string	`json:"type"`
+	Version	int		`json:"version"`
+}
+//Body struct (level 1)
+type AlertBody struct {
+	Alert	Alert	`json:"alert"`
+}
+//Alert sctuct (level 2, under Body)
+type Alert struct {
+	Attrs	map[string][]interface{}	`json:"attributes"`
+	Source	string		`json:"source"`
+	Content	string		`json:"content"`
+	When	AlertTime	`json:"timestamp"`
 }
 
+//timestamp struct (level 3, under alert)
 type AlertTime struct {
 	Iso		time.Time	`json:"iso8601"`
 	Epoch	uint		`json:"epochMs"`
 }
 
-type Alert struct {
-	Content	string						`json:"content"`
-	When	AlertTime					`json:"timestamp"`
-	Source	string						`json:"source"`
-	Attrs	map[string][]interface{}	`json:"attributes"`
-}
-
-type AlertBody struct {
-	Alert	Alert	`json:"alert"`
-}
-
-type AlertMsg struct {
-	Body	AlertBody		`json:"body"`
-	Header	AlertHeader		`json:"header"`
-}
-
 func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
+	//defines cloudera with above struct
 	var cloudera []AlertMsg
-	//var aData []map[string]interface{}
-
+	//unmarshals passed in []byte to above defined cloudera variable
 	if err := json.Unmarshal(dat, &cloudera); err != nil {
 		panic(err)
-    }
-
+	}
+	//defines the alert
 	amaList := make([]amgr.Alert,0,len(cloudera))
-
+	//for the length of the cloudera array
 	for _, a := range cloudera {
 
 		attrs := a.Body.Alert.Attrs
-		prevHealth := attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)
+		prevHealth := "GREEN"
+		if len(attrs["PREVIOUS_HEALTH_SUMMARY"]) > 0 {
+			prevHealth = attrs["PREVIOUS_HEALTH_SUMMARY"][0].(string)	
+		}
+
 		suppressed := attrs["ALERT_SUPPRESSED"][0].(string)
 
 		title := fmt.Sprintf("%s %s",
@@ -64,7 +71,8 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 				fmt.Printf("Skip: %s\n",title)
 			}
 			continue;
-		}
+	}
+
 		ama := amgr.Alert{
 			StartsAt:		a.Body.Alert.When.Iso,
 			GeneratorURL:	a.Body.Alert.Source,
@@ -88,11 +96,19 @@ func parse(dat []byte,cfg *config.Config,debug bool) []amgr.Alert {
 		ama.Labels["uuid"]		= pmod.LabelValue(attrs["__uuid"][0].(string))
 		ama.Annotations["title"] = pmod.LabelValue(title)
 		if instance, ok := attrs["HOSTS"]; ok {
-			ama.Labels["instance"]	= pmod.LabelValue(instance[0].(string))
-		}
+			ama.Labels["instance"] = pmod.LabelValue(instance[0].(string))
+			} else {
+			s, err := url.Parse(a.Body.Alert.Source)
+			if err != nil {
+			panic(err)
+			}
+			ama.Labels["instance"] = pmod.LabelValue(s.Host)
+			}
+		
 		ama.Annotations["description"] = pmod.LabelValue(a.Body.Alert.Content)
-
+		
 		amaList = append(amaList, ama)
+		
 	}
 	return amaList
 }
