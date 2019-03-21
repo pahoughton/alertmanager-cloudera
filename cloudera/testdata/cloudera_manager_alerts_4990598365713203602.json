@@ -1,0 +1,434 @@
+[ {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service hdfs has become bad." ],
+        "NAMESERVICE" : [ "nameservice1" ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.",
+          "testName" : "alarm:NameNode JVM Heap Utilization",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "alarm:NameNode JVM Heap Utilization" ],
+        "__persist_timestamp" : [ "1550777637241" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" :  [ "a89a0889-025b-4a47-b09e-200e62556837" ] ,
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "hdfs" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become good: NameNode JVM Heap Utilization trigger is not firing.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HDFS" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HDFS" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/a89a0889-025b-4a47-b09e-200e62556837",
+      "content" : "The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.",
+      "timestamp" : {
+        "epochMs" : 1550777637194,
+        "iso8601" : "2019-02-21T19:33:57Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service zookeeper2 has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for ZOOKEEPER_CANARY_HEALTH has become bad: The ZooKeeper service canary failed for an unknown reason.",
+          "testName" : "ZOOKEEPER_CANARY_HEALTH",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for ZOOKEEPER_SERVERS_HEALTHY has become good: Healthy Server: 3. Concerning Server: 0. Total Server: 3. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.",
+          "testName" : "ZOOKEEPER_SERVERS_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "ZOOKEEPER_CANARY_HEALTH", "ZOOKEEPER_SERVERS_HEALTHY" ],
+        "__persist_timestamp" : [ "1550778086398" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO Kafka" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for ZOOKEEPER_CANARY_HEALTH has become bad: The ZooKeeper service canary failed for an unknown reason.\",\"testName\":\"ZOOKEEPER_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for ZOOKEEPER_SERVERS_HEALTHY has become good: Healthy Server: 3. Concerning Server: 0. Total Server: 3. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"ZOOKEEPER_SERVERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "c01490b6-14e5-4356-8ba6-baec157de4d3" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "zookeeper2" ],
+        "CLUSTER_ID" : [ "9" ],
+        "CLUSTER" : [ "cluster2" ],
+        "MONITOR_STARTUP" : [ "true" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "ZooKeeper-2" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "NOT_AVAIL" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "GOOD_TEST_RESULTS" : [ "1" ],
+        "SERVICE_TYPE" : [ "ZOOKEEPER" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/c01490b6-14e5-4356-8ba6-baec157de4d3",
+      "content" : "Health test changes: 1 Became Bad, 1 Became Good",
+      "timestamp" : {
+        "epochMs" : 1550778083246,
+        "iso8601" : "2019-02-21T19:41:23Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ROLE_TYPE" : [ "MASTER" ],
+        "ALERT_SUMMARY" : [ "The health of role Master (xhdadmn1x4d) has become bad." ],
+        "DISABLED_TEST_RESULTS" : [ "10" ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for MASTER_SCM_HEALTH has become bad: This role's process failed to start.",
+          "testName" : "MASTER_SCM_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_CANARY_HEALTH has become disabled: Test disabled while the role is stopped: Test of whether basic client operations on the HBase Master work.",
+          "testName" : "MASTER_CANARY_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_REGIONS_IN_TRANSITION_OVER_THRESHOLD has become disabled: Test disabled while the role is stopped: Test of whether there are regions staying in transition state for a duration longer than the configured threshold in HBase.",
+          "testName" : "MASTER_REGIONS_IN_TRANSITION_OVER_THRESHOLD",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_UNEXPECTED_EXITS has become disabled: Test disabled while the role is stopped: Test of whether a role has encountered unexpected exits",
+          "testName" : "MASTER_UNEXPECTED_EXITS",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_FILE_DESCRIPTOR has become disabled: Test disabled while the role is stopped: Test of whether this role has too many open file descriptors.",
+          "testName" : "MASTER_FILE_DESCRIPTOR",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_SWAP_MEMORY_USAGE has become disabled: Test disabled while the role is stopped: Test of whether the role is using swap memory.",
+          "testName" : "MASTER_SWAP_MEMORY_USAGE",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_LOG_DIRECTORY_FREE_SPACE has become disabled: Test disabled while the role is stopped: Test of whether this role's log directory has enough free space. This health test is currently suppressed.",
+          "testName" : "MASTER_LOG_DIRECTORY_FREE_SPACE",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : true
+        }, {
+          "content" : "The health test result for MASTER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space. This health test is currently suppressed.",
+          "testName" : "MASTER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : true
+        }, {
+          "content" : "The health test result for MASTER_HOST_HEALTH has become disabled: Test disabled while the role is stopped: Test of whether the host running this role is healthy.",
+          "testName" : "MASTER_HOST_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_WEB_METRIC_COLLECTION has become disabled: Test disabled while the role is stopped: Test of whether this role's web server is responding to requests for metrics.",
+          "testName" : "MASTER_WEB_METRIC_COLLECTION",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for MASTER_GC_DURATION has become disabled: Test disabled while the role is stopped: Test of whether this role spends too much time in garbage collection.",
+          "testName" : "MASTER_GC_DURATION",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_DISABLED",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "MASTER_SCM_HEALTH", "MASTER_CANARY_HEALTH", "MASTER_REGIONS_IN_TRANSITION_OVER_THRESHOLD", "MASTER_UNEXPECTED_EXITS", "MASTER_FILE_DESCRIPTOR", "MASTER_SWAP_MEMORY_USAGE", "MASTER_LOG_DIRECTORY_FREE_SPACE", "MASTER_HEAP_DUMP_DIRECTORY_FREE_SPACE", "MASTER_HOST_HEALTH", "MASTER_WEB_METRIC_COLLECTION", "MASTER_GC_DURATION" ],
+        "__persist_timestamp" : [ "1550778086441" ],
+        "HOST_IDS" : [ "0d9bf7c6-314e-42ec-8d9a-e8f9656d4bf6" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "ROLE" : [ "hbase-MASTER-64b12d32d4d9667118133f56ea1646e6" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for MASTER_SCM_HEALTH has become bad: This role's process failed to start.\",\"testName\":\"MASTER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_CANARY_HEALTH has become disabled: Test disabled while the role is stopped: Test of whether basic client operations on the HBase Master work.\",\"testName\":\"MASTER_CANARY_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_REGIONS_IN_TRANSITION_OVER_THRESHOLD has become disabled: Test disabled while the role is stopped: Test of whether there are regions staying in transition state for a duration longer than the configured threshold in HBase.\",\"testName\":\"MASTER_REGIONS_IN_TRANSITION_OVER_THRESHOLD\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_UNEXPECTED_EXITS has become disabled: Test disabled while the role is stopped: Test of whether a role has encountered unexpected exits\",\"testName\":\"MASTER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_FILE_DESCRIPTOR has become disabled: Test disabled while the role is stopped: Test of whether this role has too many open file descriptors.\",\"testName\":\"MASTER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_SWAP_MEMORY_USAGE has become disabled: Test disabled while the role is stopped: Test of whether the role is using swap memory.\",\"testName\":\"MASTER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_LOG_DIRECTORY_FREE_SPACE has become disabled: Test disabled while the role is stopped: Test of whether this role's log directory has enough free space. This health test is currently suppressed.\",\"testName\":\"MASTER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}", "{\"content\":\"The health test result for MASTER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space. This health test is currently suppressed.\",\"testName\":\"MASTER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}", "{\"content\":\"The health test result for MASTER_HOST_HEALTH has become disabled: Test disabled while the role is stopped: Test of whether the host running this role is healthy.\",\"testName\":\"MASTER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_WEB_METRIC_COLLECTION has become disabled: Test disabled while the role is stopped: Test of whether this role's web server is responding to requests for metrics.\",\"testName\":\"MASTER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for MASTER_GC_DURATION has become disabled: Test disabled while the role is stopped: Test of whether this role spends too much time in garbage collection.\",\"testName\":\"MASTER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "2af1a948-6445-4efa-a814-ed3ea0a61713" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_ROLE_HEALTH_CHECK_BAD", "EV_ROLE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "hbase" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "ROLE_DISPLAY_NAME" : [ "Master (xhdadmn1x4d)" ],
+        "HOSTS" : [ "xhdadmn1x4d.opr.test.statefarm.org" ],
+        "MONITOR_STARTUP" : [ "true" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HBase" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "NOT_AVAIL" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HBASE" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/2af1a948-6445-4efa-a814-ed3ea0a61713",
+      "content" : "Health test changes: 1 Became Bad, 10 Became Disabled",
+      "timestamp" : {
+        "epochMs" : 1550778083246,
+        "iso8601" : "2019-02-21T19:41:23Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ROLE_TYPE" : [ "AGENT" ],
+        "ALERT_SUMMARY" : [ "The health of role Agent (xhdadmn1x47) has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for FLUME_AGENT_HEAP_DUMP_DIRECTORY_FREE_SPACE has become bad: This role's Heap Dump Directory is on a filesystem with less than 5.0 GiB of its space free. /tmp (free: 981.6 MiB (96.80%), capacity: 1,014.0 MiB)",
+          "testName" : "FLUME_AGENT_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_SCM_HEALTH has become good: This role's status is as expected. The role is started.",
+          "testName" : "FLUME_AGENT_SCM_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).",
+          "testName" : "FLUME_AGENT_UNEXPECTED_EXITS",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_FILE_DESCRIPTOR has become good: Open file descriptors: 392. File descriptor limit: 32,768. Percentage in use: 1.20%.",
+          "testName" : "FLUME_AGENT_FILE_DESCRIPTOR",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.",
+          "testName" : "FLUME_AGENT_SWAP_MEMORY_USAGE",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/flume-ng) is on a filesystem with more than 10.0 GiB of its space free.",
+          "testName" : "FLUME_AGENT_LOG_DIRECTORY_FREE_SPACE",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_HOST_HEALTH has become good: The health of this role's host is good.",
+          "testName" : "FLUME_AGENT_HOST_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for FLUME_AGENT_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 3 millisecond(s).",
+          "testName" : "FLUME_AGENT_WEB_METRIC_COLLECTION",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "FLUME_AGENT_HEAP_DUMP_DIRECTORY_FREE_SPACE", "FLUME_AGENT_SCM_HEALTH", "FLUME_AGENT_UNEXPECTED_EXITS", "FLUME_AGENT_FILE_DESCRIPTOR", "FLUME_AGENT_SWAP_MEMORY_USAGE", "FLUME_AGENT_LOG_DIRECTORY_FREE_SPACE", "FLUME_AGENT_HOST_HEALTH", "FLUME_AGENT_WEB_METRIC_COLLECTION" ],
+        "__persist_timestamp" : [ "1550778086446" ],
+        "HOST_IDS" : [ "46511e48-dba5-4b44-8764-992e903a69a9" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "ROLE" : [ "flume-AGENT-f29e140e0138bae3ec6dfc4a780f55a2" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for FLUME_AGENT_HEAP_DUMP_DIRECTORY_FREE_SPACE has become bad: This role's Heap Dump Directory is on a filesystem with less than 5.0 GiB of its space free. /tmp (free: 981.6 MiB (96.80%), capacity: 1,014.0 MiB)\",\"testName\":\"FLUME_AGENT_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"FLUME_AGENT_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"FLUME_AGENT_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_FILE_DESCRIPTOR has become good: Open file descriptors: 392. File descriptor limit: 32,768. Percentage in use: 1.20%.\",\"testName\":\"FLUME_AGENT_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"FLUME_AGENT_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/flume-ng) is on a filesystem with more than 10.0 GiB of its space free.\",\"testName\":\"FLUME_AGENT_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_HOST_HEALTH has become good: The health of this role's host is good.\",\"testName\":\"FLUME_AGENT_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for FLUME_AGENT_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 3 millisecond(s).\",\"testName\":\"FLUME_AGENT_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "68b8bf68-29c6-4722-9dcf-ca0ec9b6d753" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_ROLE_HEALTH_CHECK_BAD", "EV_ROLE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "flume" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "ROLE_DISPLAY_NAME" : [ "Agent (xhdadmn1x47)" ],
+        "HOSTS" : [ "xhdadmn1x47.opr.test.statefarm.org" ],
+        "MONITOR_STARTUP" : [ "true" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "Flume" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "NOT_AVAIL" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "GOOD_TEST_RESULTS" : [ "7" ],
+        "SERVICE_TYPE" : [ "FLUME" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/68b8bf68-29c6-4722-9dcf-ca0ec9b6d753",
+      "content" : "Health test changes: 1 Became Bad, 7 Became Good",
+      "timestamp" : {
+        "epochMs" : 1550778083246,
+        "iso8601" : "2019-02-21T19:41:23Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service zookeeper has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for ZOOKEEPER_CANARY_HEALTH has become bad: The ZooKeeper service canary failed for an unknown reason.",
+          "testName" : "ZOOKEEPER_CANARY_HEALTH",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        }, {
+          "content" : "The health test result for ZOOKEEPER_SERVERS_HEALTHY has become good: Healthy Server: 3. Concerning Server: 0. Total Server: 3. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.",
+          "testName" : "ZOOKEEPER_SERVERS_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_GOOD",
+          "severity" : "INFORMATIONAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "ZOOKEEPER_CANARY_HEALTH", "ZOOKEEPER_SERVERS_HEALTHY" ],
+        "__persist_timestamp" : [ "1550778086474" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for ZOOKEEPER_CANARY_HEALTH has become bad: The ZooKeeper service canary failed for an unknown reason.\",\"testName\":\"ZOOKEEPER_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for ZOOKEEPER_SERVERS_HEALTHY has become good: Healthy Server: 3. Concerning Server: 0. Total Server: 3. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"ZOOKEEPER_SERVERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "712e7f7f-cff5-4863-9985-40272ed3d59d" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "zookeeper" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "MONITOR_STARTUP" : [ "true" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "ZooKeeper" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "NOT_AVAIL" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "GOOD_TEST_RESULTS" : [ "1" ],
+        "SERVICE_TYPE" : [ "ZOOKEEPER" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/712e7f7f-cff5-4863-9985-40272ed3d59d",
+      "content" : "Health test changes: 1 Became Bad, 1 Became Good",
+      "timestamp" : {
+        "epochMs" : 1550778083246,
+        "iso8601" : "2019-02-21T19:41:23Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "One or more errors occurred running the HBase region health canary." ],
+        "EXCEPTION_TYPES" : [ "org.apache.hadoop.hbase.MasterNotRunningException", "org.apache.hadoop.hbase.client.RetriesExhaustedException", "java.io.IOException" ],
+        "DURATION_MS" : [ "110" ],
+        "HBASE_CANARY_TOTAL_REGIONS" : [ "0" ],
+        "HBASE_CANARY_UNHEALTHY_REGION_COUNT" : [ "0" ],
+        "HBASE_CANARY_ERRORS" : [ "org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=1, exceptions:\nThu Feb 21 19:41:27 UTC 2019, RpcRetryingCaller{globalStartTime=1550778087825, pause=100, retries=1}, org.apache.hadoop.hbase.MasterNotRunningException: java.io.IOException: Can't get master address from ZooKeeper; znode data == null\n" ],
+        "ALERT" : [ "true" ],
+        "__persist_timestamp" : [ "1550778087994" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "SERVICE_DISPLAY_NAME" : [ "HBase" ],
+        "EVENT_VERSION" : [ "1" ],
+        "HBASE_CANARY_TABLE_RESULTS" : [ "[]" ],
+        "__uuid" : [ "a2fbcf52-c44a-46be-b767-8881b65ea02a" ],
+        "CATEGORY" : [ "HBASE" ],
+        "EVENTCODE" : [ "EV_HBASE_REGION_HEALTH_CANARY_RESULTS" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE" : [ "hbase" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "SEVERITY" : [ "IMPORTANT" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/a2fbcf52-c44a-46be-b767-8881b65ea02a",
+      "content" : "Error running canary: org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=1, exceptions:\nThu Feb 21 19:41:27 UTC 2019, RpcRetryingCaller{globalStartTime=1550778087825, pause=100, retries=1}, org.apache.hadoop.hbase.MasterNotRunningException: java.io.IOException: Can't get master address from ZooKeeper; znode data == null\n\nHBase region health: 0 unhealthy regions\n",
+      "timestamp" : {
+        "epochMs" : 1550778087863,
+        "iso8601" : "2019-02-21T19:41:27Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service hdfs has become bad." ],
+        "NAMESERVICE" : [ "nameservice1" ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.",
+          "testName" : "alarm:NameNode JVM Heap Utilization",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "alarm:NameNode JVM Heap Utilization" ],
+        "__persist_timestamp" : [ "1550778132124" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "a864813b-21c0-4487-a725-c2f1e1b6f820" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "hdfs" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become good: NameNode JVM Heap Utilization trigger is not firing.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HDFS" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HDFS" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/a864813b-21c0-4487-a725-c2f1e1b6f820",
+      "content" : "The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.",
+      "timestamp" : {
+        "epochMs" : 1550778132060,
+        "iso8601" : "2019-02-21T19:42:12Z"
+      }
+    }
+  }
+} ]

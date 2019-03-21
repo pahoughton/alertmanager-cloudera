@@ -1,0 +1,427 @@
+[ {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ROLE_TYPE" : [ "SOLR_SERVER" ],
+        "ALERT_SUMMARY" : [ "The health of role Solr Server (xhdadmn1x3x) has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for SOLR_SERVER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+          "testName" : "SOLR_SERVER_HOST_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "SOLR_SERVER_HOST_HEALTH" ],
+        "__persist_timestamp" : [ "1550796857718" ],
+        "HOST_IDS" : [ "e1998e19-9807-457a-85ff-d646dc29ca86" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "ROLE" : [ "solr-SOLR_SERVER-bad1a33cfee783a88a5c343b68809134" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for SOLR_SERVER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.\",\"testName\":\"SOLR_SERVER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_CORE_STATUS_COLLECTION_HEALTH has become good: This Solr Server is responding to simple HTTP API requests. The most recent request took 20 millisecond(s).\",\"testName\":\"SOLR_CORE_STATUS_COLLECTION_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"SOLR_SERVER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"SOLR_SERVER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_FILE_DESCRIPTOR has become good: Open file descriptors: 60. File descriptor limit: 32,768. Percentage in use: 0.18%.\",\"testName\":\"SOLR_SERVER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"SOLR_SERVER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/solr) is on a filesystem with more than 20.00% of its space free.\",\"testName\":\"SOLR_SERVER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 41 millisecond(s).\",\"testName\":\"SOLR_SERVER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_GC_DURATION has become good: Average time spent in garbage collection was 0 second(s) (0.00%) per minute over the previous 5 minute(s).\",\"testName\":\"SOLR_SERVER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space.\",\"testName\":\"SOLR_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "750e5446-2276-4ab1-a8a4-ff7c079c747c" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_ROLE_HEALTH_CHECK_BAD", "EV_ROLE_HEALTH_CHECK_GOOD", "EV_ROLE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "solr" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for SOLR_CORE_STATUS_COLLECTION_HEALTH has become good: This Solr Server is responding to simple HTTP API requests. The most recent request took 22 millisecond(s).\",\"testName\":\"SOLR_CORE_STATUS_COLLECTION_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"SOLR_SERVER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"SOLR_SERVER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_FILE_DESCRIPTOR has become good: Open file descriptors: 60. File descriptor limit: 32,768. Percentage in use: 0.18%.\",\"testName\":\"SOLR_SERVER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"SOLR_SERVER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/solr) is on a filesystem with more than 20.00% of its space free.\",\"testName\":\"SOLR_SERVER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_HOST_HEALTH has become good: The health of this role's host is good.\",\"testName\":\"SOLR_SERVER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 40 millisecond(s).\",\"testName\":\"SOLR_SERVER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_GC_DURATION has become good: Average time spent in garbage collection was 0 second(s) (0.00%) per minute over the previous 5 minute(s).\",\"testName\":\"SOLR_SERVER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for SOLR_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space.\",\"testName\":\"SOLR_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "ROLE_DISPLAY_NAME" : [ "Solr Server (xhdadmn1x3x)" ],
+        "HOSTS" : [ "xhdadmn1x3x.opr.test.statefarm.org" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "Solr" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "SOLR" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/750e5446-2276-4ab1-a8a4-ff7c079c747c",
+      "content" : "The health test result for SOLR_SERVER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+      "timestamp" : {
+        "epochMs" : 1550796857667,
+        "iso8601" : "2019-02-22T00:54:17Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ROLE_TYPE" : [ "IMPALAD" ],
+        "ALERT_SUMMARY" : [ "The health of role Impala Daemon (xhdadmn1x3x) has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for IMPALAD_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+          "testName" : "IMPALAD_HOST_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "IMPALAD_HOST_HEALTH" ],
+        "__persist_timestamp" : [ "1550796857719" ],
+        "HOST_IDS" : [ "e1998e19-9807-457a-85ff-d646dc29ca86" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "ROLE" : [ "impala-IMPALAD-bad1a33cfee783a88a5c343b68809134" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for IMPALAD_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.\",\"testName\":\"IMPALAD_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_SCRATCH_DIRECTORIES_FREE_SPACE has become bad: The following Impala Daemon Scratch Directories are on filesystems with less than 5.0 GiB of their space free. /opt/hdoopadm/impala/impalad (free: 5.0 GiB (99.37%), capacity: 5.0 GiB), /dumps/impala/impalad (free: 4.0 GiB (99.21%), capacity: 4.0 GiB) This role's Impala Daemon Scratch Directories (/data/impala/impalad, /data/hadoop-data/5/impala/impalad, /data/hadoop-data/3/impala/impalad, /opt/cloudera/impala/impalad, /data/hadoop-data/4/impala/impalad, /data/hadoop-data/2/impala/impalad, /data/hadoop-data/1/impala/impalad) are on a filesystem with more than 10.0 GiB of its space free. This health test is currently suppressed.\",\"testName\":\"IMPALAD_SCRATCH_DIRECTORIES_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":true}", "{\"content\":\"The health test result for IMPALAD_CONNECTIVITY has become good: This Impala Daemon is connected to its StateStore.\",\"testName\":\"IMPALAD_CONNECTIVITY\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_READY_STATUS has become good: The Impala Daemon is ready to process queries.\",\"testName\":\"IMPALAD_READY_STATUS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_QUERY_MONITORING_STATUS has become good: There are 0 error(s) seen monitoring executing queries, and 0 errors(s) seen monitoring completed queries for this role in the previous 5 minute(s).\",\"testName\":\"IMPALAD_QUERY_MONITORING_STATUS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"IMPALAD_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"IMPALAD_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_FILE_DESCRIPTOR has become good: Open file descriptors: 278. File descriptor limit: 32,768. Percentage in use: 0.85%.\",\"testName\":\"IMPALAD_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"IMPALAD_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/impalad) is on a filesystem with more than 10.0 GiB of its space free. This health test is currently suppressed.\",\"testName\":\"IMPALAD_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}", "{\"content\":\"The health test result for IMPALAD_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 8 millisecond(s).\",\"testName\":\"IMPALAD_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space.\",\"testName\":\"IMPALAD_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_MEMORY_RSS_HEALTH has become disabled: Test disabled by user: Test of whether the role has too large a resident set size.\",\"testName\":\"IMPALAD_MEMORY_RSS_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "fbffa6ac-106d-4571-8ee1-481b64b2fa26" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_ROLE_HEALTH_CHECK_BAD", "EV_ROLE_HEALTH_CHECK_GOOD", "EV_ROLE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "impala" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for IMPALAD_SCRATCH_DIRECTORIES_FREE_SPACE has become bad: The following Impala Daemon Scratch Directories are on filesystems with less than 5.0 GiB of their space free. /opt/hdoopadm/impala/impalad (free: 5.0 GiB (99.37%), capacity: 5.0 GiB), /dumps/impala/impalad (free: 4.0 GiB (99.21%), capacity: 4.0 GiB) This role's Impala Daemon Scratch Directories (/data/impala/impalad, /data/hadoop-data/5/impala/impalad, /data/hadoop-data/3/impala/impalad, /opt/cloudera/impala/impalad, /data/hadoop-data/4/impala/impalad, /data/hadoop-data/2/impala/impalad, /data/hadoop-data/1/impala/impalad) are on a filesystem with more than 10.0 GiB of its space free. This health test is currently suppressed.\",\"testName\":\"IMPALAD_SCRATCH_DIRECTORIES_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":true}", "{\"content\":\"The health test result for IMPALAD_CONNECTIVITY has become good: This Impala Daemon is connected to its StateStore.\",\"testName\":\"IMPALAD_CONNECTIVITY\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_READY_STATUS has become good: The Impala Daemon is ready to process queries.\",\"testName\":\"IMPALAD_READY_STATUS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_QUERY_MONITORING_STATUS has become good: There are 0 error(s) seen monitoring executing queries, and 0 errors(s) seen monitoring completed queries for this role in the previous 5 minute(s).\",\"testName\":\"IMPALAD_QUERY_MONITORING_STATUS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"IMPALAD_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"IMPALAD_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_FILE_DESCRIPTOR has become good: Open file descriptors: 278. File descriptor limit: 32,768. Percentage in use: 0.85%.\",\"testName\":\"IMPALAD_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"IMPALAD_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/impalad) is on a filesystem with more than 10.0 GiB of its space free. This health test is currently suppressed.\",\"testName\":\"IMPALAD_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}", "{\"content\":\"The health test result for IMPALAD_HOST_HEALTH has become good: The health of this role's host is good.\",\"testName\":\"IMPALAD_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 9 millisecond(s).\",\"testName\":\"IMPALAD_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space.\",\"testName\":\"IMPALAD_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALAD_MEMORY_RSS_HEALTH has become disabled: Test disabled by user: Test of whether the role has too large a resident set size.\",\"testName\":\"IMPALAD_MEMORY_RSS_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "ROLE_DISPLAY_NAME" : [ "Impala Daemon (xhdadmn1x3x)" ],
+        "HOSTS" : [ "xhdadmn1x3x.opr.test.statefarm.org" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "Impala" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "IMPALA" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/fbffa6ac-106d-4571-8ee1-481b64b2fa26",
+      "content" : "The health test result for IMPALAD_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+      "timestamp" : {
+        "epochMs" : 1550796857667,
+        "iso8601" : "2019-02-22T00:54:17Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ROLE_TYPE" : [ "NODEMANAGER" ],
+        "ALERT_SUMMARY" : [ "The health of role NodeManager (xhdadmn1x3x) has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for NODE_MANAGER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+          "testName" : "NODE_MANAGER_HOST_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "NODE_MANAGER_HOST_HEALTH" ],
+        "__persist_timestamp" : [ "1550796857720" ],
+        "HOST_IDS" : [ "e1998e19-9807-457a-85ff-d646dc29ca86" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "ROLE" : [ "yarn-NODEMANAGER-bad1a33cfee783a88a5c343b68809134" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for NODE_MANAGER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.\",\"testName\":\"NODE_MANAGER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_CONNECTIVITY has become good: This NodeManager is connected to its ResourceManager.\",\"testName\":\"NODE_MANAGER_CONNECTIVITY\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_HEALTH_CHECKER has become good: The ResourceManager considers this NodeManager as healthy.\",\"testName\":\"NODE_MANAGER_HEALTH_CHECKER\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"NODE_MANAGER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"NODE_MANAGER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_FILE_DESCRIPTOR has become good: Open file descriptors: 408. File descriptor limit: 32,768. Percentage in use: 1.25%.\",\"testName\":\"NODE_MANAGER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"NODE_MANAGER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/hadoop-yarn) is on a filesystem with more than 20.00% of its space free.\",\"testName\":\"NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 37 millisecond(s).\",\"testName\":\"NODE_MANAGER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_GC_DURATION has become good: Average time spent in garbage collection was 0 second(s) (0.00%) per minute over the previous 5 minute(s).\",\"testName\":\"NODE_MANAGER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE has become good: This role's NodeManager Local Directories (/data/hadoop-data/1/yarn/nm, /data/hadoop-data/4/yarn/nm, /data/hadoop-data/2/yarn/nm, /data/hadoop-data/3/yarn/nm) are on a filesystem with more than 10.0 GiB of its space free.\",\"testName\":\"NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODEMANAGER_LOG_DIRECTORIES_FREE_SPACE has become good: This role's NodeManager Container Log Directories (/data/hadoop-data/1/yarn/container-logs, /data/hadoop-data/2/yarn/container-logs, /data/hadoop-data/4/yarn/container-logs, /data/hadoop-data/3/yarn/container-logs) are on a filesystem with more than 10.0 GiB of its space free.\",\"testName\":\"NODEMANAGER_LOG_DIRECTORIES_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE has become good: This role's NodeManager Recovery Directory (/var/lib/hadoop-yarn/yarn-nm-recovery) is on a filesystem with more than 20.00% of its space free.\",\"testName\":\"NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space.\",\"testName\":\"NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "231e56a4-473d-4200-ab97-9f93e3d9dccc" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_ROLE_HEALTH_CHECK_BAD", "EV_ROLE_HEALTH_CHECK_GOOD", "EV_ROLE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "yarn" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for NODE_MANAGER_CONNECTIVITY has become good: This NodeManager is connected to its ResourceManager.\",\"testName\":\"NODE_MANAGER_CONNECTIVITY\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_HEALTH_CHECKER has become good: The ResourceManager considers this NodeManager as healthy.\",\"testName\":\"NODE_MANAGER_HEALTH_CHECKER\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"NODE_MANAGER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"NODE_MANAGER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_FILE_DESCRIPTOR has become good: Open file descriptors: 408. File descriptor limit: 32,768. Percentage in use: 1.25%.\",\"testName\":\"NODE_MANAGER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"NODE_MANAGER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/hadoop-yarn) is on a filesystem with more than 20.00% of its space free.\",\"testName\":\"NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_HOST_HEALTH has become good: The health of this role's host is good.\",\"testName\":\"NODE_MANAGER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 38 millisecond(s).\",\"testName\":\"NODE_MANAGER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_GC_DURATION has become good: Average time spent in garbage collection was 0 second(s) (0.00%) per minute over the previous 5 minute(s).\",\"testName\":\"NODE_MANAGER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE has become good: This role's NodeManager Local Directories (/data/hadoop-data/1/yarn/nm, /data/hadoop-data/4/yarn/nm, /data/hadoop-data/2/yarn/nm, /data/hadoop-data/3/yarn/nm) are on a filesystem with more than 10.0 GiB of its space free.\",\"testName\":\"NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODEMANAGER_LOG_DIRECTORIES_FREE_SPACE has become good: This role's NodeManager Container Log Directories (/data/hadoop-data/1/yarn/container-logs, /data/hadoop-data/2/yarn/container-logs, /data/hadoop-data/4/yarn/container-logs, /data/hadoop-data/3/yarn/container-logs) are on a filesystem with more than 10.0 GiB of its space free.\",\"testName\":\"NODEMANAGER_LOG_DIRECTORIES_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE has become good: This role's NodeManager Recovery Directory (/var/lib/hadoop-yarn/yarn-nm-recovery) is on a filesystem with more than 20.00% of its space free.\",\"testName\":\"NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space.\",\"testName\":\"NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "ROLE_DISPLAY_NAME" : [ "NodeManager (xhdadmn1x3x)" ],
+        "HOSTS" : [ "xhdadmn1x3x.opr.test.statefarm.org" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "YARN (MR2 Included)" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "YARN" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/231e56a4-473d-4200-ab97-9f93e3d9dccc",
+      "content" : "The health test result for NODE_MANAGER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+      "timestamp" : {
+        "epochMs" : 1550796857667,
+        "iso8601" : "2019-02-22T00:54:17Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ROLE_TYPE" : [ "REGIONSERVER" ],
+        "ALERT_SUMMARY" : [ "The health of role RegionServer (xhdadmn1x3x) has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for REGION_SERVER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+          "testName" : "REGION_SERVER_HOST_HEALTH",
+          "eventCode" : "EV_ROLE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "REGION_SERVER_HOST_HEALTH" ],
+        "__persist_timestamp" : [ "1550796857720" ],
+        "HOST_IDS" : [ "e1998e19-9807-457a-85ff-d646dc29ca86" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "ROLE" : [ "hbase-REGIONSERVER-bad1a33cfee783a88a5c343b68809134" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for REGION_SERVER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.\",\"testName\":\"REGION_SERVER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"REGION_SERVER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"REGION_SERVER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_FILE_DESCRIPTOR has become good: Open file descriptors: 277. File descriptor limit: 32,768. Percentage in use: 0.85%.\",\"testName\":\"REGION_SERVER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"REGION_SERVER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/hbase) is on a filesystem with more than 10.0 GiB of its space free. This health test is currently suppressed.\",\"testName\":\"REGION_SERVER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}", "{\"content\":\"The health test result for REGION_SERVER_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 22 millisecond(s).\",\"testName\":\"REGION_SERVER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_GC_DURATION has become good: Average time spent in garbage collection was 0 second(s) (0.00%) per minute over the previous 5 minute(s).\",\"testName\":\"REGION_SERVER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_COMPACTION_QUEUE has become unknown: Not enough data to test: Test of whether the RegionServer's compaction queue is too full.\",\"testName\":\"REGION_SERVER_COMPACTION_QUEUE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_FLUSH_QUEUE has become unknown: Not enough data to test: Test of whether the RegionServer's flush queue is too full.\",\"testName\":\"REGION_SERVER_FLUSH_QUEUE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_STORE_FILE_IDX_SIZE has become unknown: Not enough data to test: Test of whether the RegionServer store file index is too big.\",\"testName\":\"REGION_SERVER_STORE_FILE_IDX_SIZE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_MEMSTORE_SIZE has become unknown: Not enough data to test: Test of whether the memstore size exceeds the maximum configured upper limit as a percentage of the heap.\",\"testName\":\"REGION_SERVER_MEMSTORE_SIZE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_MASTER_CONNECTIVITY has become disabled: Test of connectivity between this RegionServer and its cluster disabled while the Master is not running.\",\"testName\":\"REGION_SERVER_MASTER_CONNECTIVITY\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space. This health test is currently suppressed.\",\"testName\":\"REGION_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}" ],
+        "__uuid" : [ "0d493c1b-2d39-4983-bf0e-91eb8ccbc1e0" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_ROLE_HEALTH_CHECK_BAD", "EV_ROLE_HEALTH_CHECK_GOOD", "EV_ROLE_HEALTH_CHECK_UNKNOWN", "EV_ROLE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "hbase" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for REGION_SERVER_SCM_HEALTH has become good: This role's status is as expected. The role is started.\",\"testName\":\"REGION_SERVER_SCM_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_UNEXPECTED_EXITS has become good: This role encountered 0 unexpected exit(s) in the previous 5 minute(s).\",\"testName\":\"REGION_SERVER_UNEXPECTED_EXITS\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_FILE_DESCRIPTOR has become good: Open file descriptors: 277. File descriptor limit: 32,768. Percentage in use: 0.85%.\",\"testName\":\"REGION_SERVER_FILE_DESCRIPTOR\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_SWAP_MEMORY_USAGE has become good: 0 B of swap memory is being used by this role's process.\",\"testName\":\"REGION_SERVER_SWAP_MEMORY_USAGE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_LOG_DIRECTORY_FREE_SPACE has become good: This role's Log Directory (/var/log/hbase) is on a filesystem with more than 10.0 GiB of its space free. This health test is currently suppressed.\",\"testName\":\"REGION_SERVER_LOG_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}", "{\"content\":\"The health test result for REGION_SERVER_HOST_HEALTH has become good: The health of this role's host is good.\",\"testName\":\"REGION_SERVER_HOST_HEALTH\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_WEB_METRIC_COLLECTION has become good: The web server of this role is responding with metrics. The most recent collection took 32 millisecond(s).\",\"testName\":\"REGION_SERVER_WEB_METRIC_COLLECTION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_GC_DURATION has become good: Average time spent in garbage collection was 0 second(s) (0.00%) per minute over the previous 5 minute(s).\",\"testName\":\"REGION_SERVER_GC_DURATION\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_COMPACTION_QUEUE has become unknown: Not enough data to test: Test of whether the RegionServer's compaction queue is too full.\",\"testName\":\"REGION_SERVER_COMPACTION_QUEUE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_FLUSH_QUEUE has become unknown: Not enough data to test: Test of whether the RegionServer's flush queue is too full.\",\"testName\":\"REGION_SERVER_FLUSH_QUEUE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_STORE_FILE_IDX_SIZE has become unknown: Not enough data to test: Test of whether the RegionServer store file index is too big.\",\"testName\":\"REGION_SERVER_STORE_FILE_IDX_SIZE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_MEMSTORE_SIZE has become unknown: Not enough data to test: Test of whether the memstore size exceeds the maximum configured upper limit as a percentage of the heap.\",\"testName\":\"REGION_SERVER_MEMSTORE_SIZE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_UNKNOWN\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_MASTER_CONNECTIVITY has become disabled: Test of connectivity between this RegionServer and its cluster disabled while the Master is not running.\",\"testName\":\"REGION_SERVER_MASTER_CONNECTIVITY\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for REGION_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE has become disabled: Test disabled because role is not configured to dump heap when out of memory. Test of whether this role's heap dump directory has enough free space. This health test is currently suppressed.\",\"testName\":\"REGION_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE\",\"eventCode\":\"EV_ROLE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":true}" ],
+        "ROLE_DISPLAY_NAME" : [ "RegionServer (xhdadmn1x3x)" ],
+        "HOSTS" : [ "xhdadmn1x3x.opr.test.statefarm.org" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HBase" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HBASE" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/0d493c1b-2d39-4983-bf0e-91eb8ccbc1e0",
+      "content" : "The health test result for REGION_SERVER_HOST_HEALTH has become bad: The health of this role's host is bad. The following health tests are bad: clock offset.",
+      "timestamp" : {
+        "epochMs" : 1550796857667,
+        "iso8601" : "2019-02-22T00:54:17Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service solr has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for SOLR_SOLR_SERVERS_HEALTHY has become bad: Healthy Solr Server: 4. Concerning Solr Server: 0. Total Solr Server: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+          "testName" : "SOLR_SOLR_SERVERS_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "SOLR_SOLR_SERVERS_HEALTHY" ],
+        "__persist_timestamp" : [ "1550796862761" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for SOLR_SOLR_SERVERS_HEALTHY has become bad: Healthy Solr Server: 4. Concerning Solr Server: 0. Total Solr Server: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.\",\"testName\":\"SOLR_SOLR_SERVERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "3c903049-4c21-459c-a442-8bfa72ab5d5c" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD" ],
+        "SERVICE" : [ "solr" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for SOLR_SOLR_SERVERS_HEALTHY has become good: Healthy Solr Server: 5. Concerning Solr Server: 0. Total Solr Server: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"SOLR_SOLR_SERVERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "Solr" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "SOLR" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/3c903049-4c21-459c-a442-8bfa72ab5d5c",
+      "content" : "The health test result for SOLR_SOLR_SERVERS_HEALTHY has become bad: Healthy Solr Server: 4. Concerning Solr Server: 0. Total Solr Server: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+      "timestamp" : {
+        "epochMs" : 1550796862718,
+        "iso8601" : "2019-02-22T00:54:22Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service hbase has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for HBASE_REGION_SERVERS_HEALTHY has become bad: Healthy RegionServer: 4. Concerning RegionServer: 0. Total RegionServer: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+          "testName" : "HBASE_REGION_SERVERS_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "HBASE_REGION_SERVERS_HEALTHY" ],
+        "__persist_timestamp" : [ "1550796862762" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for HBASE_MASTER_HEALTH has become bad: Master summary: xhdadmn1x4d.opr.test.statefarm.org (Availability: Stopped, Health: Bad). This health test is bad because the Service Monitor did not find an active Master.\",\"testName\":\"HBASE_MASTER_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HBASE_REGION_SERVERS_HEALTHY has become bad: Healthy RegionServer: 4. Concerning RegionServer: 0. Total RegionServer: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.\",\"testName\":\"HBASE_REGION_SERVERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "99f89a00-6532-4962-95c9-3147d14c8221" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD" ],
+        "SERVICE" : [ "hbase" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for HBASE_MASTER_HEALTH has become bad: Master summary: xhdadmn1x4d.opr.test.statefarm.org (Availability: Stopped, Health: Bad). This health test is bad because the Service Monitor did not find an active Master.\",\"testName\":\"HBASE_MASTER_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HBASE_REGION_SERVERS_HEALTHY has become good: Healthy RegionServer: 5. Concerning RegionServer: 0. Total RegionServer: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HBASE_REGION_SERVERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HBase" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "RED" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HBASE" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/99f89a00-6532-4962-95c9-3147d14c8221",
+      "content" : "The health test result for HBASE_REGION_SERVERS_HEALTHY has become bad: Healthy RegionServer: 4. Concerning RegionServer: 0. Total RegionServer: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+      "timestamp" : {
+        "epochMs" : 1550796862718,
+        "iso8601" : "2019-02-22T00:54:22Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service hdfs has become bad." ],
+        "NAMESERVICE" : [ "nameservice1" ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for HDFS_DATA_NODES_HEALTHY has become bad: Healthy DataNode: 4. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+          "testName" : "HDFS_DATA_NODES_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "HDFS_DATA_NODES_HEALTHY" ],
+        "__persist_timestamp" : [ "1550796862762" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become bad: Healthy DataNode: 4. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "9ccccfc7-2afd-4620-b68e-756b07be0b16" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD" ],
+        "SERVICE" : [ "hdfs" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for alarm:NameNode JVM Heap Utilization has become bad: NameNode JVM Heap Utilization trigger is firing for conditions select jvm_heap_used_mb/jvm_max_memory_mb*100 AS jvm_heap_used_percent where serviceType=HDFS AND roleType=NameNode and last(jvm_heap_used_mb/jvm_max_memory_mb*100) >= 20.\",\"testName\":\"alarm:NameNode JVM Heap Utilization\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_HA_NAMENODE_HEALTH has become good: NameNode summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"HDFS_HA_NAMENODE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FREE_SPACE_REMAINING has become good: Space free in the cluster: 4.4 TiB. Capacity of the cluster: 4.7 TiB. Percentage of capacity free: 93.78%.\",\"testName\":\"HDFS_FREE_SPACE_REMAINING\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_BLOCKS_WITH_CORRUPT_REPLICAS has become good: 0 blocks with corrupt replicas in the cluster. 2,350 total blocks in the cluster. Percentage blocks with corrupt replicas: 0.00%.\",\"testName\":\"HDFS_BLOCKS_WITH_CORRUPT_REPLICAS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_MISSING_BLOCKS has become good: 0 missing blocks in the cluster. 2,350 total blocks in the cluster. Percentage missing blocks: 0.00%.\",\"testName\":\"HDFS_MISSING_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_UNDER_REPLICATED_BLOCKS has become good: 0 under replicated blocks in the cluster. 2,350 total blocks in the cluster. Percentage under replicated blocks: 0.00%.\",\"testName\":\"HDFS_UNDER_REPLICATED_BLOCKS\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_CANARY_HEALTH has become good: Canary test of file create, write, read and delete operations succeeded.\",\"testName\":\"HDFS_CANARY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_DATA_NODES_HEALTHY has become good: Healthy DataNode: 5. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"HDFS_DATA_NODES_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for HDFS_FAILOVER_CONTROLLERS_HEALTHY has become good: Failover Controllers with good health: xhdadmn1x4a.opr.test.statefarm.org, xhdadmn1x4b.opr.test.statefarm.org.\",\"testName\":\"HDFS_FAILOVER_CONTROLLERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "HDFS" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "RED" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "HDFS" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/9ccccfc7-2afd-4620-b68e-756b07be0b16",
+      "content" : "The health test result for HDFS_DATA_NODES_HEALTHY has become bad: Healthy DataNode: 4. Concerning DataNode: 0. Total DataNode: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+      "timestamp" : {
+        "epochMs" : 1550796862718,
+        "iso8601" : "2019-02-22T00:54:22Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service impala has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for IMPALA_IMPALADS_HEALTHY has become bad: Healthy Impala Daemon: 4. Concerning Impala Daemon: 0. Total Impala Daemon: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+          "testName" : "IMPALA_IMPALADS_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "IMPALA_IMPALADS_HEALTHY" ],
+        "__persist_timestamp" : [ "1550796862763" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for IMPALA_IMPALADS_HEALTHY has become bad: Healthy Impala Daemon: 4. Concerning Impala Daemon: 0. Total Impala Daemon: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.\",\"testName\":\"IMPALA_IMPALADS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALA_STATESTORE_HEALTH has become good: The Impala StateStore is running with good health.\",\"testName\":\"IMPALA_STATESTORE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALA_CATALOGSERVER_HEALTH has become good: The Impala Catalog Server is running with good health.\",\"testName\":\"IMPALA_CATALOGSERVER_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALA_ASSIGNMENT_LOCALITY has become disabled: 100.00% of assignments operating on local data over the past 15 minute(s). 0 local assignments. 0 total assignments. At least 10 assignments required for this test to return a value.\",\"testName\":\"IMPALA_ASSIGNMENT_LOCALITY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "be84fa6f-45cb-43be-9818-ef3496844be9" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD", "EV_SERVICE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "impala" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for IMPALA_STATESTORE_HEALTH has become good: The Impala StateStore is running with good health.\",\"testName\":\"IMPALA_STATESTORE_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALA_CATALOGSERVER_HEALTH has become good: The Impala Catalog Server is running with good health.\",\"testName\":\"IMPALA_CATALOGSERVER_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALA_IMPALADS_HEALTHY has become good: Healthy Impala Daemon: 5. Concerning Impala Daemon: 0. Total Impala Daemon: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"IMPALA_IMPALADS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for IMPALA_ASSIGNMENT_LOCALITY has become disabled: 100.00% of assignments operating on local data over the past 15 minute(s). 0 local assignments. 0 total assignments. At least 10 assignments required for this test to return a value.\",\"testName\":\"IMPALA_ASSIGNMENT_LOCALITY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "Impala" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "IMPALA" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/be84fa6f-45cb-43be-9818-ef3496844be9",
+      "content" : "The health test result for IMPALA_IMPALADS_HEALTHY has become bad: Healthy Impala Daemon: 4. Concerning Impala Daemon: 0. Total Impala Daemon: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+      "timestamp" : {
+        "epochMs" : 1550796862718,
+        "iso8601" : "2019-02-22T00:54:22Z"
+      }
+    }
+  }
+}, {
+  "header" : {
+    "type" : "alert",
+    "version" : 2
+  },
+  "body" : {
+    "alert" : {
+      "attributes" : {
+        "ALERT_SUMMARY" : [ "The health of service yarn has become bad." ],
+        "HEALTH_TEST_RESULTS" : [ {
+          "content" : "The health test result for YARN_NODE_MANAGERS_HEALTHY has become bad: Healthy NodeManager: 4. Concerning NodeManager: 0. Total NodeManager: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+          "testName" : "YARN_NODE_MANAGERS_HEALTHY",
+          "eventCode" : "EV_SERVICE_HEALTH_CHECK_BAD",
+          "severity" : "CRITICAL",
+          "suppressed" : false
+        } ],
+        "ALERT" : [ "true" ],
+        "HEALTH_TEST_NAME" : [ "YARN_NODE_MANAGERS_HEALTHY" ],
+        "__persist_timestamp" : [ "1550796862763" ],
+        "CLUSTER_DISPLAY_NAME" : [ "Expedition Infrastructure EDCO CDH" ],
+        "BAD_TEST_RESULTS" : [ "1" ],
+        "CURRENT_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for YARN_NODE_MANAGERS_HEALTHY has become bad: Healthy NodeManager: 4. Concerning NodeManager: 0. Total NodeManager: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.\",\"testName\":\"YARN_NODE_MANAGERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_BAD\",\"severity\":\"CRITICAL\",\"suppressed\":false}", "{\"content\":\"The health test result for YARN_RESOURCEMANAGERS_HEALTH has become good: ResourceManager summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"YARN_RESOURCEMANAGERS_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for YARN_JOBHISTORY_HEALTH has become good: The JobHistory Server is running with good health.\",\"testName\":\"YARN_JOBHISTORY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for YARN_USAGE_AGGREGATION_HEALTH has become disabled: This health test is disabled because container usage metric collection is disabled for YARN.\",\"testName\":\"YARN_USAGE_AGGREGATION_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "__uuid" : [ "4f2ee066-9979-414a-87b0-e7a51816fd96" ],
+        "CATEGORY" : [ "HEALTH_CHECK" ],
+        "EVENTCODE" : [ "EV_SERVICE_HEALTH_CHECK_BAD", "EV_SERVICE_HEALTH_CHECK_GOOD", "EV_SERVICE_HEALTH_CHECK_DISABLED" ],
+        "SERVICE" : [ "yarn" ],
+        "CLUSTER_ID" : [ "1" ],
+        "CLUSTER" : [ "cluster1" ],
+        "PREVIOUS_COMPLETE_HEALTH_TEST_RESULTS" : [ "{\"content\":\"The health test result for YARN_RESOURCEMANAGERS_HEALTH has become good: ResourceManager summary: xhdadmn1x4b.opr.test.statefarm.org (Availability: Active, Health: Good), xhdadmn1x4a.opr.test.statefarm.org (Availability: Standby, Health: Good)\",\"testName\":\"YARN_RESOURCEMANAGERS_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for YARN_JOBHISTORY_HEALTH has become good: The JobHistory Server is running with good health.\",\"testName\":\"YARN_JOBHISTORY_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for YARN_NODE_MANAGERS_HEALTHY has become good: Healthy NodeManager: 5. Concerning NodeManager: 0. Total NodeManager: 5. Percent healthy: 100.00%. Percent healthy or concerning: 100.00%.\",\"testName\":\"YARN_NODE_MANAGERS_HEALTHY\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_GOOD\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}", "{\"content\":\"The health test result for YARN_USAGE_AGGREGATION_HEALTH has become disabled: This health test is disabled because container usage metric collection is disabled for YARN.\",\"testName\":\"YARN_USAGE_AGGREGATION_HEALTH\",\"eventCode\":\"EV_SERVICE_HEALTH_CHECK_DISABLED\",\"severity\":\"INFORMATIONAL\",\"suppressed\":false}" ],
+        "MONITOR_STARTUP" : [ "false" ],
+        "CURRENT_HEALTH_SUMMARY" : [ "RED" ],
+        "SERVICE_DISPLAY_NAME" : [ "YARN (MR2 Included)" ],
+        "PREVIOUS_HEALTH_SUMMARY" : [ "GREEN" ],
+        "ALERT_SUPPRESSED" : [ "false" ],
+        "SERVICE_TYPE" : [ "YARN" ],
+        "SEVERITY" : [ "CRITICAL" ]
+      },
+      "source" : "https://xhdadmn1x3e.opr.test.statefarm.org:7183/cmf/eventRedirect/4f2ee066-9979-414a-87b0-e7a51816fd96",
+      "content" : "The health test result for YARN_NODE_MANAGERS_HEALTHY has become bad: Healthy NodeManager: 4. Concerning NodeManager: 0. Total NodeManager: 5. Percent healthy: 80.00%. Percent healthy or concerning: 80.00%. Critical threshold: 90.00%.",
+      "timestamp" : {
+        "epochMs" : 1550796862718,
+        "iso8601" : "2019-02-22T00:54:22Z"
+      }
+    }
+  }
+} ]
